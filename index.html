@@ -57,11 +57,31 @@
   			(function(){
   				$(document).ready(main);
 
+  				var dayNames[10];
+  					dayNames[0] = 'Monday';
+  					dayNames[1] = 'Tuesday';
+  					dayNames[2] = 'Wednesday';
+  					dayNames[3] = 'Thursday';
+  					dayNames[4] = 'Friday';
+  					dayNames[5] = 'Saturday';
+  					dayNames[6] = 'Sunday';
+
+  				$.getTime = function(zone, success) {
+			    var url = 'http://json-time.appspot.com/time.json?tz='
+			            + zone + '&callback=?';
+			    $.getJSON(url, function(o){
+			        success && success(new Date(o.datetime), o);
+			    });
+				};
+
   				function main()
   				{
-  					
-  					
+  					$.getTime('GMT', function(time){
+				    alert(time);
+					});	
   				}
+
+  				
   			})();
   		</script>
 	</head>
