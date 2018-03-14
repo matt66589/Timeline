@@ -3,6 +3,8 @@
 
 	function main()
 	{
+		// this is going to help with grabbing time from server
+		// https://stackoverflow.com/questions/23783307/how-to-get-current-date-from-internet-via-javascript
 		var refresh = 10000;
     var container = document.getElementById('timeline');
 
