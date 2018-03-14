@@ -10779,7 +10779,7 @@ function TimeStep(start, end, minimumStep, hiddenDates, options) {
   this._start = this.moment();
   this._end = this.moment();
 
-  this.autoScale = true;
+  this.autoScale  = true;
   this.scale = 'day';
   this.step = 1;
 
@@ -10792,14 +10792,17 @@ function TimeStep(start, end, minimumStep, hiddenDates, options) {
   this.switchedYear = false;
   if (Array.isArray(hiddenDates)) {
     this.hiddenDates = hiddenDates;
-  } else if (hiddenDates != undefined) {
+  }
+  else if (hiddenDates != undefined) {
     this.hiddenDates = [hiddenDates];
-  } else {
+  }
+  else {
     this.hiddenDates = [];
   }
 
   this.format = TimeStep.FORMAT; // default formatting
   this.options = options ? options : {};
+
 }
 
 // Time formatting
@@ -11383,15 +11386,15 @@ TimeStep.prototype.isMajor = function () {
  * @param {Date} [date=this.current] custom date. if not provided, current date is taken
  * @returns {String}
  */
-TimeStep.prototype.getLabelMinor = function (date) {
+TimeStep.prototype.getLabelMinor = function(date) {
   if (date == undefined) {
     date = this.current;
   }
   if (date instanceof Date) {
-    date = this.moment(date);
+    date = this.moment(date)
   }
 
-  if (typeof this.format.minorLabels === "function") {
+  if (typeof(this.format.minorLabels) === "function") {
     return this.format.minorLabels(date, this.scale, this.step);
   }
 
@@ -11399,12 +11402,11 @@ TimeStep.prototype.getLabelMinor = function (date) {
   // noinspection FallThroughInSwitchStatementJS
   switch (this.scale) {
     case 'week':
-      if (this.isMajor() && date.weekday() !== 0) {
-        return "";
+      if(this.isMajor() && date.weekday() !== 0){
+          return "";
       }
-    default:
-      // eslint-disable-line no-fallthrough
-      return format && format.length > 0 ? this.moment(date).format(format) : '';
+    default: // eslint-disable-line no-fallthrough
+      return (format && format.length > 0) ? this.moment(date).format(format) : '';
   }
 };
 
@@ -11415,20 +11417,20 @@ TimeStep.prototype.getLabelMinor = function (date) {
  * @param {Date} [date=this.current] custom date. if not provided, current date is taken
  * @returns {String}
  */
-TimeStep.prototype.getLabelMajor = function (date) {
+TimeStep.prototype.getLabelMajor = function(date) {
   if (date == undefined) {
     date = this.current;
   }
   if (date instanceof Date) {
-    date = this.moment(date);
+    date = this.moment(date)
   }
 
-  if (typeof this.format.majorLabels === "function") {
+  if (typeof(this.format.majorLabels) === "function") {
     return this.format.majorLabels(date, this.scale, this.step);
   }
 
   var format = this.format.majorLabels[this.scale];
-  return format && format.length > 0 ? this.moment(date).format(format) : '';
+  return (format && format.length > 0) ? this.moment(date).format(format) : '';
 };
 
 TimeStep.prototype.getClassName = function () {
