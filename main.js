@@ -41,7 +41,7 @@
     };
 
     var current = new Date();
-    timelien.moveTo(current);
+    timeline.moveTo(current);
     
     
 	}
