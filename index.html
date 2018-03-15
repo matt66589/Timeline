@@ -87,6 +87,29 @@
       border-width: 2px;
       border-color: white;
     }
+     /*===================================*/
+        
+      #event-field
+        {
+          margin: 0px 0px 0px 0px;
+          padding: 0px 0px 0px 0px;
+          text-align: center;
+        }
+        #field-title
+        {
+          font-weight: bold;
+          font-size: 40pt;
+          font-family: 'Ubuntu', sans-serif;
+          padding-bottom: 15px;
+          
+        }
+        #field-subtitle
+        {
+          font-size: 25pt;
+          font-family: 'Ubuntu', sans-serif;
+          padding-bottom: 5px;
+          text-align: center;
+        }
       </style>
 
   </head>
@@ -97,8 +120,20 @@
     <hr>
     
     <div id="timeline">
-      
     </div>
-
+  <hr>
+    <div id="event-field">
+      <p id="field-title">Add event</p>
+      <br>
+      <p id="field-subtitle">Event Name</p>
+      <br>
+      <input id="event-name" />
+      <br>
+      <p id="field-subtitle">Date of event</p>
+      <br>
+      <input id="event-date" />
+      <br>
+      <button type="submit">Submit</button>
+     </div>
   </body>
 </html>
