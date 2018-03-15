@@ -12,6 +12,12 @@
       <script src="vis.js"></script>
       <link href="vis-timeline-graph2d.min.css" rel="stylesheet" type="text/css" />
       <style>
+        /*
+        html
+        {
+         overflow-y: hidden;
+        }
+        */
         #title
         {
           font-family: 'Josefin Sans', sans-serif;
@@ -91,49 +97,150 @@
         
       #event-field
         {
-          margin: 0px 0px 0px 0px;
+          margin: auto;
           padding: 0px 0px 0px 0px;
-          text-align: center;
+          /* border: 4px solid grey; */
+          width: 400px;
+          padding: 4px;
+          height: 350px;
+         
         }
         #field-title
         {
+          margin: auto;
+          padding: 0px 0px 0px 0px;
           font-weight: bold;
           font-size: 40pt;
+          text-align: left;
           font-family: 'Ubuntu', sans-serif;
           padding-bottom: 15px;
           
         }
-        #field-subtitle
+        .field-subtitle
         {
+          margin: 0px 0px 0px 0px;
+          padding: 0px 0px 0px 0px;
           font-size: 25pt;
           font-family: 'Ubuntu', sans-serif;
           padding-bottom: 5px;
           text-align: center;
         }
+        input
+        {
+          margin: auto;
+          padding: 0px 0px 0px 0px;
+          text-align: center;
+
+        }
+        .add-event-inputs
+        {
+
+        }
+        #event-date
+        {
+          width: 300px;
+          border-bottom: 1px solid black;
+          border-left: none;
+          border-right: none;
+          border-top: none;
+          height: 30px;
+          font-size: 25pt;
+        }
+        #event-date:focus
+        {
+          outline: none;
+        } 
+        #event-name:focus
+        {
+          outline: none;
+        }
+        #event-name
+        {
+          width: 300px;
+          border-bottom: 1px solid black;
+          border-left: none;
+          border-right: none;
+          border-top: none;
+          height: 30px;
+          font-size: 25pt;
+        }
+        #top-space
+        {
+          height: 20px;
+        }
+        #container
+        {
+
+        }
+        .container-1
+        {
+          text-align: center;
+          margin: auto;
+        }
+        .shadow {
+          -webkit-box-shadow: 3px 3px 5px 6px #ccc;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+          -moz-box-shadow:    3px 3px 5px 6px #ccc;  /* Firefox 3.5 - 3.6 */
+          box-shadow:         3px 3px 5px 6px #ccc;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+                }
+                #bottom-space
+                {
+                  height: 500px;
+
+                }
+        #scrollPos
+        {
+          
+        }
+        #position-container
+        {
+          
+          position: fixed;
+          float: top;
+          z-index: 100;
+          margin: 0px 0px 0px 0px;
+          background-color: white;
+          padding-right: 3px;
+
+        }
       </style>
 
   </head>
   <body>
+    <div id="position-container">
+    <p class="field-subtitle" id="scrollPos"></p>
+    </div>
     <div id="topbar">
     <p id="title">Timeline</p>
     </div>
     <hr>
-    
     <div id="timeline">
     </div>
   <hr>
-    <div id="event-field">
-      <p id="field-title">Add event</p>
-      <br>
-      <p id="field-subtitle">Event Name</p>
-      <br>
-      <input id="event-name" />
-      <br>
-      <p id="field-subtitle">Date of event</p>
-      <br>
-      <input id="event-date" />
-      <br>
-      <button type="submit">Submit</button>
+    <div id="top-space"></div>
+    <div id="container">
+      <div id="event-field" class="shadow">
+        <div class="container-1">
+        <p id="field-title">Add event</p>
+        </div>
+        <br>
+        <p class="field-subtitle">Event Name</p>
+        <br>
+        <div class="container-1">
+        <input id="event-name" />
+        </div>
+        <br>
+        <p class="field-subtitle">Date of event</p>
+        <br>
+        <div class="container-1">
+        <input id="event-date" />
+        </div>
+        <br>
+        <div class="container-1">
+        <button type="submit">Submit</button>
+      </div>
+       </div>
      </div>
+     <div id="bottom-space"></div>
+
   </body>
 </html>

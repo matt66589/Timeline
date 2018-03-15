@@ -5,9 +5,11 @@
 	{
 		// this is going to help with grabbing time from server
 		// https://stackoverflow.com/questions/23783307/how-to-get-current-date-from-internet-via-javascript
-		var refresh = 10000;
+		//var scrollScreen = document.getElementById('scrollPos');
+    var refresh = 10000;
     var container = document.getElementById('timeline');
-
+    $("html, body").animate({ scrollTop: 500 }, 1800);
+    setInterval(checkPosition, 1000);
   // Create a DataSet (allows two way data-binding)
   var items = new vis.DataSet([
     {id: 1, content: 'Database Management work - Alex', start: '2018-03-15'},
@@ -43,8 +45,16 @@
     var current = new Date();
     timeline.moveTo(current);
     
+    $('body,html').animate({scrollTop: 156}, 800);
     
 	}
 
-  
+  function checkPosition()
+  {
+    $(document).on("scroll", function(e){
+      var screenPosition = $(window).scrollTop();
+      $('#scrollPos').val(screenPosition);
+      
+    });
+  }
 })();
