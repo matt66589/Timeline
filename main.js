@@ -3,6 +3,8 @@
 
 	function main()
 	{
+		// new resource https://github.com/almende/vis/issues/24
+		
 		// this is going to help with grabbing time from server
 		// https://stackoverflow.com/questions/23783307/how-to-get-current-date-from-internet-via-javascript
 		//var scrollScreen = document.getElementById('scrollPos');
