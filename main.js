@@ -11,10 +11,9 @@
     var refresh = 10000;
     var container = document.getElementById('timeline');
     $("html, body").animate({ scrollTop: 500 }, 1800);
-    setInterval(checkPosition, 1000);
   // Create a DataSet (allows two way data-binding)
   var items = new vis.DataSet([
-    {id: 1, content: 'Database Management work - Alex', start: '2018-03-15'},
+    {id: 1, content: 'Database Management work - Alex', start: '2018-03-20'},
     
     /*
     {id: 2, content: 'item 2', start: '2018-03-14'},
@@ -42,21 +41,6 @@
     
     itemOrientation.onchange = function () {
       timeline.setOptions({ orientation: {item: this.value} });
-    };
+    	};
 
-    var current = new Date();
-    timeline.moveTo(current);
-    
-    $('body,html').animate({scrollTop: 156}, 800);
-    
-	}
-
-  function checkPosition()
-  {
-    $(document).on("scroll", function(e){
-      var screenPosition = $(window).scrollTop();
-      $('#scrollPos').val(screenPosition);
-      
-    });
-  }
 })();
