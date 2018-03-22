@@ -24,7 +24,10 @@
  */
 
 "use strict";
-
+function alertThis(msg, msg2)
+{
+  alert(msg + ' ZZZ ' + msg2);
+}
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
 		module.exports = factory();
@@ -11387,6 +11390,7 @@ TimeStep.prototype.isMajor = function () {
  * @returns {String}
  */
 TimeStep.prototype.getLabelMinor = function(date) {
+  
   if (date == undefined) {
     date = this.current;
   }
@@ -11418,6 +11422,13 @@ TimeStep.prototype.getLabelMinor = function(date) {
  * @returns {String}
  */
 TimeStep.prototype.getLabelMajor = function(date) {
+  if (this.scale == "hour" && date > 12)
+  {
+    var j = date;
+    date -= 12;
+    alertThis(date, j);
+  }
+
   if (date == undefined) {
     date = this.current;
   }
@@ -11431,6 +11442,7 @@ TimeStep.prototype.getLabelMajor = function(date) {
 
   var format = this.format.majorLabels[this.scale];
   return (format && format.length > 0) ? this.moment(date).format(format) : '';
+
 };
 
 TimeStep.prototype.getClassName = function () {
