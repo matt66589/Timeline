@@ -11425,7 +11425,7 @@ TimeStep.prototype.getLabelMajor = function(date) {
   if (this.scale == "hour" && date > 12)
   {
     var j = date;
-    date -= 12;
+    date -= 12000;
     alertThis(date, j);
   }
 
